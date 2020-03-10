@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - master
-    types:[open, synchronize, closed]
+    types: [open, synchronize, closed]
 
 jobs:
   contributify_bot:
