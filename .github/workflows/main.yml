@@ -1,13 +1,13 @@
-name: "Test my own workflow"
-
 on:
   pull_request:
     branches:
       - master
-    types: [open, synchronize, closed]
+    types: [synchronize, closed]
 
 jobs:
   contributify_bot:
     runs-on: ubuntu-latest
+    name: A Job which adds Contributors
     steps:
-      - uses: r4pt0s/contributify@master
+      - name: Contributify BOT
+        uses: r4pt0s/contributify@master
