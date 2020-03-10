@@ -1,13 +1,23 @@
-on:
+name: "Contributify BOT (Github Action)"
+
+on: 
   pull_request:
-    branches:
+    branches: 
       - master
-    types: [synchronize, closed]
+    types: [open,synchronize, closed]
 
 jobs:
   contributify_bot:
     runs-on: ubuntu-latest
-    name: A Job which adds Contributors
     steps:
-      - name: Contributify BOT
-        uses: r4pt0s/contributify@master
+    - name: 'Use checkout action'
+      uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: 'Install node'
+      uses: actions/setup-node@v1
+    - name: 'run contributify bot'
+      uses: r4pt0s/contributify@master 
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
