@@ -1,0 +1,13 @@
+name: "Test my own workflow"
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:[open, synchronize, closed]
+
+jobs:
+  contributify_bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: r4pt0s/contributify@master
