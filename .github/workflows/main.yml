@@ -10,10 +10,6 @@ jobs:
   contributify_bot:
     runs-on: ubuntu-latest
     steps:
-    - name: 'Use checkout action'
-      uses: actions/checkout@v2
-      with:
-        ref: master
     - name: 'Install node'
       uses: actions/setup-node@v1
     - name: 'run contributify bot'
@@ -22,3 +18,7 @@ jobs:
         workspace: ${{ github.repository }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: 'Use checkout action'
+      uses: actions/checkout@v2
+      with:
+        ref: master
