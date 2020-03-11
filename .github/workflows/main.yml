@@ -13,8 +13,7 @@ jobs:
     - name: 'Use checkout action'
       uses: actions/checkout@v2
       with:
-        ref: master
-        path: ${{ github.repository }}
+        ref: master        
     - name: 'Install node'
       uses: actions/setup-node@v1
     - name: 'run contributify bot'
