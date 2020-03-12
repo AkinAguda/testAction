@@ -2,9 +2,9 @@ name: "Contributify BOT (Github Action)"
 
 on: 
   pull_request:
+    types: [open,synchronize, closed]
     branches: 
       - master
-    types: [open,synchronize, closed]
 
 jobs:
   contributify_bot:
@@ -13,12 +13,14 @@ jobs:
     - name: 'Use checkout action'
       uses: actions/checkout@v2
       with:
-        ref: master        
+        ref: master
     - name: 'Install node'
       uses: actions/setup-node@v1
     - name: 'run contributify bot'
       uses: r4pt0s/contributify@master 
       with:
         workspace: ${{ github.repository }}
+        repo-token: ${{secrets.GITHUB_TOKEN}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
