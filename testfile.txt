@@ -22,3 +22,5 @@ Humans are cruel. They make copies of us and send them to their friends. Each on
 Test
 
 Another test
+
+I am a test message
